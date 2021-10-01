@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangun datar</title>
+</head>
+<body>
+    <script type="module">
+        //ambil rumus persegi
+        import {luasPersegi as Luas1, kelilingPersegi as Keliling1} from './persegi.js';
+        //ambil rumus persegi panjang
+        import {luasPersegiPanjang as Luas2, kelilingPersegiPanjang as Keliling2} from './persegipanjang.js';
+        //ambil rumus layang-layang
+        import {luasLayangLayang as Luas3, kelilingLayangLayang as Keliling3} from './layanglayang.js';
+        //ambil rumus trapesium
+        import {luasTrapesium as Luas4, kelilingTrapesium as Keliling4} from './trapesium.js';
+        //ambil rumus belah ketupat
+        import {luasBelahKetupat as Luas5, kelilingBelahKetupat as Keliling5} from './belahketupat.js';
+        //ambil rumus jajar genjang
+        import {luasJajarGenjang as Luas6, kelilingJajarGenjang as Keliling6} from './jajargenjang.js';
+        //ambil rumus Segitiga
+        import {luasSegitiga as Luas7, kelilingSegitiga as Keliling7} from './segitiga.js';
+
+        var memilih;
+        memilih=prompt("pilihan rumus bangun datar : \n1.persegi \n2.persegi panjang \n3.layang-layang \n4.trapesium \n5.belah ketupat \n6.jajar genjang \n7.segitiga");
+
+        if (memilih == "1"){
+            let sisi = Number(prompt("Masukkan sisi persegi (cm)"));
+
+            let L1 = Luas1(sisi);
+            let K1 = Keliling1(sisi);
+
+            alert(`persegi : \nsisi : ${sisi} cm memiliki luas ${L1} cm\u00B2 & keliling ${K1} cm`);
+        }
+
+        else if (memilih == "2"){
+            let panjang = Number(prompt("Masukkan sisi panjang dari persegi panjang (cm)"));
+            let lebar = Number(prompt("Masukkan sisi lebar dari persegi panjang (cm)"));
+
+            let L2 = Luas2(panjang, lebar);
+            let K2 = Keliling2(panjang, lebar);
+
+            alert(`persegi panjang: \npanjang dan lebar ${panjang, lebar} cm memiliki luas ${L2} cm\u00B2 & keliling ${K2} cm`);
+        }
+
+        else if (memilih == "3"){
+            let diagonal1 = Number(prompt("masukkan ukuran diagonal1 dari Layang-Layang (cm)"));
+            let diagonal2 = Number(prompt("masukkan ukuran diagonal2 dari Layang-Layang (cm) "));
+            let sisiPendek = Number(prompt("masukkan ukuran sisi pendek dari Layang-Layang (cm)"));
+            let sisiPanjang = Number(prompt("masukkan ukuran sisi panjang dari Layang-Layang (cm)"));
+
+            let L3 = Luas3(diagonal1, diagonal2);
+            let K3 = Keliling3(sisiPendek, sisiPanjang);
+
+            alert(`Layang-Layang  \ndiagonal 1 : ${diagonal1} cm\ndiagonal 2 : ${diagonal2} cm\nsisi Pendek : ${sisiPendek} cm\nsisi Panjang : ${sisiPanjang} cm\njadi luasnya : ${L3} dan kelilingnya : ${K3}`);
+        }
+
+        else if (memilih == "4"){
+            let alasAtas = Number(prompt("masukkan ukuran alas atas Trapesium (cm)"));
+            let alasBawah = Number(prompt("masukkan ukuran alas bawah Trapesium (cm)"));
+            let tinggi = Number(prompt("masukkan ukuran tinggi Trapesium (cm)"));
+            let sisi1 = Number(prompt("masukkan ukuran sisi1 trapesium "));
+            let sisi2 = Number(prompt("masukkan ukuran sisi2 Trapesium (cm)"));
+            let sisi3 = Number(prompt("masukkan ukuran siis3 Trapesium (cm)"));
+            let sisi4 = Number(prompt("masukka ukuran sisi4 Trapesium (cm)"));
+
+            let L4 = Luas4(alasAtas, alasBawah, tinggi);
+            let K4 = Keliling4(sisi1, sisi2, sisi3, sisi4);
+
+            alert(`Trapesium: \nalasAtas : ${alasAtas} cm\nalasBawah : ${alasBawah} cm\ntinggi : ${tinggi} cm\nsisi : ${sisi1, sisi2, sisi3, sisi4} \njadi Luasnya : ${L4} dan Kelilingnya : ${K4}`);
+        }
+
+        else if (memilih == "5"){
+            let diagonal1 = Number(prompt("masukkan ukuran diagonal1 Belah ketupat (cm)"));
+            let diagonal2 = Number(prompt("masukkan ukuran diagonal2 Belah ketupat (cm)"));
+            let sisi = Number(prompt("masukkan ukuran sisi Belah ketupat (cm)"));
+
+            let L5 = Luas5(diagonal1, diagonal2);
+            let K5 = Keliling5(sisi);
+
+            alert(`Belah Ketupat \ndiagonal1 : ${diagonal1} cm\ndiagonal2 : ${diagonal2} cm\nsisi : ${sisi} cm\njadi luasnya : ${L5} cm dan kelilingnya : ${K5}`);
+        }
+
+        else if (memilih == "6"){
+            let alas = Number(prompt("masukkan ukuran alas Jajar Genjang (cm)"));
+            let tinggi = Number(prompt("masukkan ukuran tinggi Jajar Genjang (cm)"));
+            let sisimiring = Number(prompt("masukkan ukuran sisimiring Jajar Genjang (cm)"));
+
+            let L6 = Luas6(alas, tinggi);
+            let K6 = Keliling6(alas, sisimiring);
+
+            alert(`Jajar Genjang \nalas : ${alas} cm\ntinggi : ${tinggi} cm\nsisimiring : ${sisimiring} cm\njadi, Luasnya ${L6} cm\u00B2 & Kelilingnya ${K6} cm`);
+        }
+
+        else if (memilih == "7"){
+            let alas = Number(prompt("masukkan ukuran alas segitiga (cm)"));
+            let tinggi = Number(prompt("masukkan ukuran tinggi segitiga (cm)"));
+            //sisi dalam segitiga sama saja berartikan ac+ab+bc salah satu sisinya memiliki nilai yang sama dengan alas segitiga
+            let sisi1 = Number(prompt("masukkan ukuran sisi1 segitiga (cm)"));
+            let sisi2 = Number(prompt("masukkan ukuran sisi2 segitiga (cm)"));
+            let sisi3 = Number(prompt("masukkan ukuran sisi3 segitiga (cm)"));
+
+            let L7 = Luas7(alas,tinggi);
+            let K7 = Keliling7(sisi1,sisi2,sisi3);
+
+            alert(`segitiga \nalas: ${alas} cm\ntinggi: ${tinggi} cm\nsisi1: ${sisi1} cm\nsisi2: ${sisi2} cm\nsisi3: ${sisi3} cm\njadi, Luasnya ${L7} cm\u00B2 & kelilingnya ${K7} cm`);
+        }
+        else{
+        alert("Tidak dapat menemukan yang Anda cari!!!");
+        }
+    </script>
+</body>
+</html>
